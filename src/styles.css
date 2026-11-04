@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+@import 'shadcn/tailwind.css';
+@import '@fontsource-variable/geist';
+
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--muted);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--foreground);
+  --color-destructive: var(--foreground);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
+  --font-sans: var(--type-family);
+  --font-heading: var(--type-family);
+  --text-xs: var(--type-xs);
+  --text-sm: var(--type-sm);
+  --text-base: var(--type-base);
+  --text-lg: var(--type-lg);
+  --text-xl: var(--type-xl);
+  --text-2xl: var(--type-2xl);
+  --font-weight-normal: var(--type-weight-normal);
+  --font-weight-medium: var(--type-weight-medium);
+  --font-weight-semibold: var(--type-weight-semibold);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --spacing: var(--space-unit);
+}
+
+:root {
+  color-scheme: light;
+  --background: oklch(0.985 0 0);
+  --foreground: oklch(0.205 0 0);
+  --card: oklch(1 0 0);
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --border: oklch(0.87 0 0);
+  --primary: oklch(0.48 0.17 260);
+  --primary-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.95 0.02 260);
+  --radius: 0.625rem;
+  --space-unit: 0.25rem;
+  --type-family: 'Geist Variable', system-ui, sans-serif;
+  --type-xs: 0.75rem;
+  --type-sm: 0.875rem;
+  --type-base: 1rem;
+  --type-lg: 1.125rem;
+  --type-xl: 1.25rem;
+  --type-2xl: 1.5rem;
+  --type-weight-normal: 400;
+  --type-weight-medium: 500;
+  --type-weight-semibold: 600;
+  --type-leading: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: oklch(0.16 0 0);
+    --foreground: oklch(0.96 0 0);
+    --card: oklch(0.21 0 0);
+    --muted: oklch(0.27 0 0);
+    --muted-foreground: oklch(0.74 0 0);
+    --border: oklch(0.36 0 0);
+    --primary: oklch(0.78 0.1 260);
+    --primary-foreground: oklch(0.16 0 0);
+    --accent: oklch(0.28 0.03 260);
+    /* Geometry and typography stay consistent across color schemes. */
+    --radius: 0.625rem;
+    --space-unit: 0.25rem;
+    --type-family: 'Geist Variable', system-ui, sans-serif;
+    --type-xs: 0.75rem;
+    --type-sm: 0.875rem;
+    --type-base: 1rem;
+    --type-lg: 1.125rem;
+    --type-xl: 1.25rem;
+    --type-2xl: 1.5rem;
+    --type-weight-normal: 400;
+    --type-weight-medium: 500;
+    --type-weight-semibold: 600;
+    --type-leading: 1.5;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background font-sans text-base text-foreground;
+    line-height: var(--type-leading);
+  }
+}
